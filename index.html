@@ -137,79 +137,6 @@
             font-size: 1.1rem;
         }
 
-        /* Photo Gallery */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-top: 3rem;
-        }
-
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            cursor: pointer;
-            height: 250px;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
-
-        .gallery-caption {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(transparent, rgba(0,0,0,0.8));
-            color: white;
-            padding: 2rem 1rem 1rem;
-            font-weight: 500;
-        }
-
-        /* Lightbox */
-        .lightbox {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.95);
-            z-index: 2000;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .lightbox.active {
-            display: flex;
-        }
-
-        .lightbox img {
-            max-width: 90%;
-            max-height: 90%;
-            box-shadow: 0 4px 30px rgba(255,255,255,0.1);
-        }
-
-        .lightbox-close {
-            position: absolute;
-            top: 2rem;
-            right: 2rem;
-            color: white;
-            font-size: 3rem;
-            cursor: pointer;
-            z-index: 2001;
-        }
-
         /* Map Section */
         .map-container {
             margin-top: 3rem;
@@ -450,10 +377,6 @@
             .vr-grid {
                 grid-template-columns: 1fr;
             }
-
-            .gallery-grid {
-                grid-template-columns: 1fr;
-            }
         }
 
         /* Smooth Scroll */
@@ -475,7 +398,6 @@
             <div class="logo">🏰 Sintra Guide</div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#virtual-tours">Virtual Tours</a></li>
                 <li><a href="#map">Map</a></li>
                 <li><a href="#attractions">Attractions</a></li>
@@ -490,53 +412,9 @@
         <div class="hero-content">
             <h1>Discover Sintra</h1>
             <p>Portugal's Magical UNESCO World Heritage Town</p>
-            <a href="#gallery" class="cta-button">Start Exploring</a>
+            <a href="#virtual-tours" class="cta-button">Start Exploring</a>
         </div>
     </section>
-
-    <!-- Photo Gallery Section -->
-    <section id="gallery">
-        <h2>📸 Photo Gallery</h2>
-        <p class="section-subtitle">Stunning views of Sintra's palaces, castles, and landscapes</p>
-
-        <div class="gallery-grid">
-            <div class="gallery-item" onclick="openLightbox('https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Pal%C3%A1cio_Nacional_da_Pena_%2848428964992%29.jpg/1200px-Pal%C3%A1cio_Nacional_da_Pena_%2848428964992%29.jpg')">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Pal%C3%A1cio_Nacional_da_Pena_%2848428964992%29.jpg/600px-Pal%C3%A1cio_Nacional_da_Pena_%2848428964992%29.jpg" alt="Pena Palace" loading="lazy">
-                <div class="gallery-caption">Pena Palace — The Crown Jewel</div>
-            </div>
-
-            <div class="gallery-item" onclick="openLightbox('https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Quinta_da_Regaleira%2C_Sintra%2C_Portugal_%2827558022997%29.jpg/1200px-Quinta_da_Regaleira%2C_Sintra%2C_Portugal_%2827558022997%29.jpg')">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Quinta_da_Regaleira%2C_Sintra%2C_Portugal_%2827558022997%29.jpg/600px-Quinta_da_Regaleira%2C_Sintra%2C_Portugal_%2827558022997%29.jpg" alt="Quinta da Regaleira" loading="lazy">
-                <div class="gallery-caption">Quinta da Regaleira — Initiation Well</div>
-            </div>
-
-            <div class="gallery-item" onclick="openLightbox('https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Sintra_-_Portugal_%2850578899733%29.jpg/1200px-Sintra_-_Portugal_%2850578899733%29.jpg')">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Sintra_-_Portugal_%2850578899733%29.jpg/600px-Sintra_-_Portugal_%2850578899733%29.jpg" alt="Sintra Town" loading="lazy">
-                <div class="gallery-caption">Historic Town Center</div>
-            </div>
-
-            <div class="gallery-item" onclick="openLightbox('https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Pal%C3%A1cio_Nacional_de_Sintra_-_June_2022_%281%29.jpg/1200px-Pal%C3%A1cio_Nacional_de_Sintra_-_June_2022_%281%29.jpg')">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Pal%C3%A1cio_Nacional_de_Sintra_-_June_2022_%281%29.jpg/600px-Pal%C3%A1cio_Nacional_de_Sintra_-_June_2022_%281%29.jpg" alt="Sintra National Palace" loading="lazy">
-                <div class="gallery-caption">Sintra National Palace</div>
-            </div>
-
-            <div class="gallery-item" onclick="openLightbox('https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Castelo_dos_Mouros_-_Sintra_18_%2836337352175%29.jpg/1200px-Castelo_dos_Mouros_-_Sintra_18_%2836337352175%29.jpg')">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Castelo_dos_Mouros_-_Sintra_18_%2836337352175%29.jpg/600px-Castelo_dos_Mouros_-_Sintra_18_%2836337352175%29.jpg" alt="Moorish Castle" loading="lazy">
-                <div class="gallery-caption">Moorish Castle — Ancient Fortress</div>
-            </div>
-
-            <div class="gallery-item" onclick="openLightbox('https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Cabo_da_Roca_2020_%281%29.jpg/1200px-Cabo_da_Roca_2020_%281%29.jpg')">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Cabo_da_Roca_2020_%281%29.jpg/600px-Cabo_da_Roca_2020_%281%29.jpg" alt="Cabo da Roca" loading="lazy">
-                <div class="gallery-caption">Cabo da Roca — Edge of Europe</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Lightbox -->
-    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
-        <span class="lightbox-close">&times;</span>
-        <img id="lightbox-img" src="" alt="Sintra Photo">
-    </div>
 
     <!-- Virtual Tours Section -->
     <section id="virtual-tours">
@@ -824,16 +702,6 @@
     </footer>
 
     <script>
-        // Lightbox functionality
-        function openLightbox(imgSrc) {
-            document.getElementById('lightbox').classList.add('active');
-            document.getElementById('lightbox-img').src = imgSrc;
-        }
-
-        function closeLightbox() {
-            document.getElementById('lightbox').classList.remove('active');
-        }
-
         // Smooth scroll for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -855,13 +723,6 @@
                 header.style.background = 'linear-gradient(135deg, rgba(139, 69, 19, 0.95) 0%, rgba(44, 62, 80, 0.95) 100%)';
             } else {
                 header.style.background = 'linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%)';
-            }
-        });
-
-        // Close lightbox on escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeLightbox();
             }
         });
     </script>
